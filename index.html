@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  </head>
+  <body>
+    
+    <div class="container">
+      
+      <div class="image">
+        <img src="photto.jpg" alt="">
+      </div>
+      
+      <div class="card-content">
+        <div class="wrapper">
+          <div class="title">TIDJET KHIREDDINE</div>
+          <p>BEJAIA</p>
+          <span class="price">homme</span>
+          <div class="content size">
+            <div class="name size-name">diplôm</div>
+            <div class="size-value">
+              <span class="color">licence</span>
+            </div>
+          </div>
+          <div class="content colour">
+            <div class="name colour-name">23-07-2000</div>
+           
+          </div>
+          <div class="btns">
+            <button>plus</button>
+            <button>contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(".colour-value span").click(function(){
+        $(".colour-value span").removeClass("active");
+        $(this).addClass("active");
+        $("body").css("background", $(this).attr("data-color"));
+        $(".wrapper .price").css("color", $(this).attr("data-color"));
+        $(".size-value span.color").css("color", $(this).attr("data-color"));
+        $(".size-value span.active").css("background", $(this).attr("data-color"));
+        $(".image img").attr("src", $(this).attr("data-img"));
+        $(".btns button").css({
+          "background": $(this).attr("data-color"),
+          "border-color": $(this).attr("data-color")
+        });
+      });
+    </script>
+
+  </body>
+</html>
